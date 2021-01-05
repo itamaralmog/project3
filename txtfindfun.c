@@ -51,7 +51,7 @@ int substring(char * str1, char * str2){
     int ls = getlen(str1), lw = getlen(str2) ;
     if(ls<lw) return 0;
     int i=0,j;
-    for(i;i<ls-lw;++i){
+    for(;i<ls-lw;++i){
         for(j=0;j<lw;++j){
             if(str1[i+j]!=str2[j]){
                 break;
@@ -94,7 +94,7 @@ void print_lines(char * str){
 }
 void print_similar_words(char * str){
     char w[WORD];
-    while(getword(w)!=EOF&&getlen(w) != 0){
+    while(getword(w)!=EOF&& getlen(w) != 0){
         if(similar(w,str,1))
             printf("%s\n",w);
         memset(w,0,WORD);

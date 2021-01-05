@@ -14,5 +14,9 @@ int main(){
     if(action=='b'){
         print_similar_words(w);
     }
+    if(action !='b' && action != 'a'){
+        printf("not action.");
+        return 1;
+    }
     return 0;
 }

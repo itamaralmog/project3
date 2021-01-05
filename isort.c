@@ -12,7 +12,7 @@ void print_array(int *data, int n) {
 void shift_element(int* arr, int i) {
 	int *j = arr + i;
 	int iV= *(arr+i);
-	for( j; arr < j && *(j-1)>iV ; j--){
+	for(; arr < j && *(j-1)>iV ; j--){
 		*j=*(j-1);
 	}
 	*j = iV;
@@ -35,6 +35,12 @@ int main() {
 		arr[i] = n;
 		++i;
 	}
+	if(i < 50) {
+		printf("less than 50 numbers");
+		return 1;
+	}
+	//print_array(&arr[0], SIZEARR);
 	insertion_sort(&arr[0], SIZEARR);
 	print_array(&arr[0], SIZEARR);
+	return 0;
 }
